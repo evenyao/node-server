@@ -43,3 +43,24 @@ xhr.onload = function(){
 
 通过 http://localhost:9003/index.hmtl 访问该页面，在控制台查询到mock数据
 使用 ctrl + c 退出
+
+
+# 跨域相关 -- 新增 9004 9005 端口的跨域 demo
+## 9004 - JSONP 跨域demo案例
+```JavaScript
+script.src = 'http://127.0.0.1:9004/getNews?callback=appendHtml'
+```
+
+通过 http://localhost:9004/index.hmtl 与 http://127.0.0.1:9004/index.hmtl 访问页面，点击 `show news` 按钮查看数据
+
+## 9005 - CORS 跨域demo案例
+```JavaScript
+res.setHeader('Access-Control-Allow-Origin','http://localhost:9005')  //CORS跨域
+```
+
+通过 http://localhost:9005/index.hmtl 与 http://127.0.0.1:9005/index.hmtl 访问页面，点击 `show news` 按钮查看数据
+
+### CORS 其他
+```JavaScript
+res.setHeader('Access-Control-Allow-Origin','*')  //CORS跨域 全局
+```
