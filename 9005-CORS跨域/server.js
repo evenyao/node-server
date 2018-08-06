@@ -13,7 +13,7 @@ http.createServer(function(req,res){
         "威斯布鲁克妻子透露将自己与丈夫的第二个孩子",
         "[翻译团]防守将会使雷霆在2018-19赛季更上一层楼"
       ]
-      res.setHeader('Access-Control-Allow-Origin','http://localhost:9005') //CORS跨域
+      res.setHeader('Access-Control-Allow-Origin','http://a.com:9005') //CORS跨域
       res.setHeader('content-Type','text/json; charset=utf-8')
       res.end(JSON.stringify(news))
 
@@ -30,4 +30,4 @@ http.createServer(function(req,res){
       })
   }
 }).listen(9005)
-console.log('visit http://localhost:9005/index.html')
+console.log('visit http://127.0.0.1:9005/index.html')
