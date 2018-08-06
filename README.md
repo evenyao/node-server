@@ -54,13 +54,18 @@ script.src = 'http://127.0.0.1:9004/getNews?callback=appendHtml'
 通过 http://localhost:9004/index.hmtl 与 http://127.0.0.1:9004/index.hmtl 访问页面，点击 `show news` 按钮查看数据
 
 ## 9005 - CORS 跨域demo案例
+先使用HostHubby添加127.0.0.1的新dns为a.com和b.com
+
 ```JavaScript
-res.setHeader('Access-Control-Allow-Origin','http://localhost:9005')  //CORS跨域
+res.setHeader('Access-Control-Allow-Origin','http://a.com:9005')  //CORS跨域
 ```
 
-通过 http://localhost:9005/index.hmtl 与 http://127.0.0.1:9005/index.hmtl 访问页面，点击 `show news` 按钮查看数据
+通过 http://a.com:9005/index.hmtl 与 http://b.com:9005/index.hmtl 访问页面，点击 `show news` 按钮查看数据
 
-### CORS 其他
+然后再添加全局CORS
 ```JavaScript
 res.setHeader('Access-Control-Allow-Origin','*')  //CORS跨域 全局
 ```
+
+之后再通过 http://a.com:9005/index.hmtl 与 http://b.com:9005/index.hmtl 访问页面，点击 `show news` 按钮查看数据
+
