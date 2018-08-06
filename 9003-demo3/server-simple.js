@@ -8,7 +8,7 @@ http.createServer(function(req,res){
 
   switch(pathObj.pathname){
     case '/getWeather':
-    res.setHeader('Access-Control-Allow-Origin','http://localhost:9003')  //CORS跨域
+    res.setHeader('Access-Control-Allow-Origin','http://a.com:9003')  //CORS跨域
     res.setHeader('content-Type','text/json; charset=utf-8')
       if(pathObj.query.city === 'beijing'){
         ret = {
@@ -30,3 +30,4 @@ http.createServer(function(req,res){
       res.end( fs.readFileSync(__dirname + '/static' + pathObj.pathname) )
   }
 }).listen(9003)
+console.log('visit http://127.0.0.1:9003/index.html')
